@@ -8,12 +8,12 @@ const Header = () => {
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light" sticky="top">
                 <Container>
                     <Navbar.Brand href="#home">
-                        <span style={{color:'green'}}>R</span>estore
-                        <span style={{color:'red'}}>H</span>ealth &nbsp;
-                        <span style={{color:'green'}}>B</span>
-                        <span style={{color:'red'}}>D</span>
+                        <span style={{color:'blue'}}>R</span>estore
+                        <span style={{color:'blue'}}>H</span>ealth &nbsp;
+                        <span style={{color:'blue'}}>B</span>
+                        <span style={{color:'blue'}}>D</span>
                     </Navbar.Brand>
-                    
+
                     <Navbar.Toggle />
 
                     <Navbar.Collapse className="justify-content-end">
