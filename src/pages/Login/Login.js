@@ -1,10 +1,11 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
     return (
         <div id="login">
-            <h3 className="text-center text-white pt-5">Login form</h3>
+            <h3 className="text-center text-white">Login form</h3>
             <div className="container">
                 <div id="login-row" className="row justify-content-center align-items-center">
                     <div id="login-column" className="col-md-6">
@@ -26,7 +27,7 @@ const Login = () => {
                                     </div>
                                 </div>
                                 <div id="register-link" className="text-right">
-                                    <a href="#" className="text-primary">Register here</a>
+                                    <NavLink to="/register" className="text-primary">New ? Register here</NavLink>
                                 </div>
                             </form>
                         </div>

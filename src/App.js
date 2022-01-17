@@ -1,31 +1,43 @@
 import './App.css';
 import 'bootstrap/dist/js/bootstrap.bundle'
-import Banner from './pages/Home/Banner/Banner';
 import Header from './pages/Shared/Header/Header';
-import About from './pages/Home/About/About';
-import Facilities from './pages/Home/Facilities/Facilities';
-import Counter from './pages/Home/Counter/Counter';
-import Appointment from './pages/Home/Appointment/Appointment';
-import Posts from './pages/Home/Posts/Posts';
 import Footer from './pages/Shared/Footer/Footer';
-import Reviews from './pages/Home/Reviews/Reviews';
 import Login from './pages/Login/Login';
 import Registration from './pages/Registration/Registration';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home/Home/Home';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
     <>
-      <Header />
-      <Banner />
-      <About />
-      <Facilities />
-      <Reviews />
-      <Counter />
-      <Appointment />
-      <Posts />
-      <Login />
-      <Registration />
-      <Footer />
+      <Router>
+        <Header />
+        
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+
+          <Route exact path="/home">
+            <Home />
+          </Route>
+
+          <Route exact path="/register">
+            <Registration />
+          </Route>
+
+          <Route exact path="/login">
+            <Login />
+          </Route>
+
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+
+        <Footer />
+      </Router>
     </>
   );
 }

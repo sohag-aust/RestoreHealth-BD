@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Registration.css';
 
 const Registration = () => {
@@ -6,7 +7,7 @@ const Registration = () => {
         <div className="signup-form">
             <form action="/examples/actions/confirmation.php" method="post">
                 <h2>Register</h2>
-                <p className="hint-text">Create your account. It's free and only takes a minute.</p>
+                <p className="text-secondary">Create your account. It's free and only takes a minute.</p>
 
                 <div className="form-group">
                     <div className="row">
@@ -33,18 +34,14 @@ const Registration = () => {
                 </div>  
 
                 <div className="form-group">
-                    <label className="form-check-label">
-                        Already have account ? &nbsp; <a href="#" className="go-login text-primary">Login</a>
-                    </label>
-                </div>
-
-                <div className="form-group">
                     <button type="submit" className="btn btn-success btn-lg btn-block">Register Now</button>
                 </div>
 
             </form>
 
-            <div className="text-center">Already have an account? <a href="#">Sign in</a></div>
+            <div className="text-center">
+                Already have an account? <NavLink to="/login" style={{fontSize: '20px', color: 'blue'}}>Sign in</NavLink>
+            </div>
         </div>
     );
 };
