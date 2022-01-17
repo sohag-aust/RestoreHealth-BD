@@ -1,0 +1,28 @@
+[
+    {
+        "id":2,
+        "title": "Bone Marrow Aspiration",
+        "description": "Bone marrow aspiration, direct removal of a small amount (about 1–5 millilitres) of bone marrow by suction through a hollow needle.",
+        "img": "https://i.ibb.co/rcsmDz2/img2.jpg",
+        "date": "jan 5, 2021",
+        "aos": "fade-up-right"
+    },
+
+    {
+        "id":4,
+        "title": "Glucose Test",
+        "description": "Glucose test, procedure to assess the ability of the body to metabolize glucose, the principal type of sugar found in the blood.",
+        "img": "https://i.ibb.co/vcYfHpM/img4.jpg",
+        "date": "jan 7, 2021",
+        "aos": "fade-down"
+    },
+
+    {
+        "id":6,
+        "title": "Immunologic Blood Test",
+        "description": "Immunologic blood test, any of a group of diagnostic analyses of blood that employ antigens (foreign proteins) and antibodies.",
+        "img": "https://i.ibb.co/DRPhS2c/img6.jpg",
+        "date": "jan 10, 2021",
+        "aos": "fade-up-left"
+    }
+]
