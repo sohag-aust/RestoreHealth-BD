@@ -1,0 +1,51 @@
+.footer{
+    background:var(--black);
+}
+  
+.footer p{
+    font-size: 14px;
+    color:#eee;
+    padding:16px 0;
+}
+  
+.footer .col-md-4{
+    padding:20px
+}
+  
+.footer .col-md-4:nth-child(1) a{
+    font-size: 25px;
+    color:#fff;
+}
+  
+.footer .col-md-4:nth-child(1) a span{
+    color:var(--blue);
+}
+  
+.footer a{
+    font-size: 16px;
+    color:#ccc;
+    display: block;
+}
+  
+.footer h3{
+    color:#fff;
+    font-size: 30px;
+}
+  
+.footer a:hover{
+    color:var(--blue);
+}
+  
+.footer .credit{
+    color:#fff;
+    width:80%;
+    margin:0;
+    padding:25px 0;
+    padding-bottom: 50px;
+    font-size: 25px;
+    border-top: 2px solid #ccc !important;
+}
+  
+.footer .credit span{
+    color:var(--blue);
+}
