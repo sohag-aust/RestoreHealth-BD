@@ -5,6 +5,7 @@ import Header from './pages/Shared/Header/Header';
 import About from './pages/Home/About/About';
 import Facilities from './pages/Home/Facilities/Facilities';
 import Review from './pages/Home/Review/Review';
+import Counter from './pages/Home/Counter/Counter';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <About />
       <Facilities />
       <Review />
+      <Counter />
     </>
   );
 }

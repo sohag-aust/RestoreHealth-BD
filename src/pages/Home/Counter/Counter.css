@@ -1,0 +1,28 @@
+.counter .box-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:20px 0;
+}
+  
+.counter .box-container .box{
+    margin:25px 80px;
+    text-align: center;
+}
+  
+.counter .box-container .box i{
+    color:var(--blue);
+    font-size: 80px;
+}
+  
+.counter .box-container .box span{
+    color:var(--black);
+    font-size: 25px;
+    display: block;
+    padding:16px 0;
+}
+  
+.counter .box-container .box h3{
+    color:#666;
+    font-size: 20px;
+}
