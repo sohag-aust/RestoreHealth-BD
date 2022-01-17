@@ -4,6 +4,12 @@ import 'aos/dist/aos.css';
 import './Counter.css';
 
 const Counter = () => {
+    useEffect(()=>{
+        Aos.init({
+            duration: 2000
+        });
+    }, []);
+    
     return (
         <section className="counter">
             <div className="container">

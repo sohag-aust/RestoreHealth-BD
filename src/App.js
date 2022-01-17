@@ -6,6 +6,7 @@ import About from './pages/Home/About/About';
 import Facilities from './pages/Home/Facilities/Facilities';
 import Review from './pages/Home/Review/Review';
 import Counter from './pages/Home/Counter/Counter';
+import Appointment from './pages/Home/Appointment/Appointment';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Facilities />
       <Review />
       <Counter />
+      <Appointment />
     </>
   );
 }

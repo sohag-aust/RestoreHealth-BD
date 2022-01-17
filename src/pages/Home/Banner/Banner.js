@@ -23,7 +23,7 @@ const Banner = () => {
                     <div className="col-md-6 pl-md-5 content" data-aos="fade-left">
                         <h1><span>stay</span> safe, <span>stay</span> healthy.</h1>
                         <h3>caring for you.</h3>
-                        <a href="#"><button className="learn-more">learn more</button></a>
+                        <a href="#"><button className="button">learn more</button></a>
                     </div>
 
                 </div>

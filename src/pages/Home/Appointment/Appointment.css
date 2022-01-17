@@ -1,0 +1,42 @@
+.contact{
+    background:var(--black);
+}
+  
+.contact .heading{
+    color:#fff;
+}
+  
+.contact form{
+    text-align: center;
+}
+  
+.contact form .inputBox{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+  
+.contact form .inputBox input, select{
+    height: 45px;
+    width:49%;
+    padding:0 16px;
+    margin:16px 0;
+    font-size: 16px;
+    color:var(--black);
+}
+  
+.contact form textarea{
+    height:320px;
+    resize: none;
+    padding:16px;
+    font-size: 16px;
+    width: 100%;
+}
+  
+.contact form input[type="submit"]{
+    width:240px;
+}
+  
+.contact form input[type="submit"]:hover{
+    background:var(--black);
+}
