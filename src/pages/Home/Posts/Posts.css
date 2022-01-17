@@ -1,0 +1,44 @@
+.post .box-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+  
+.post .box-container .box{
+    width:300px;
+    margin:32px 16px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.3);
+}
+  
+.post .box-container .box img{
+    height:200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.post .box-container .box .content{
+    padding:0 24px;
+}
+  
+.post .box-container .box .content span{
+    color:#666;
+    font-size: 24px;
+    display: block;
+    padding:16px 0;
+}
+  
+.post .box-container .box .content h3{
+    font-size: 20px;
+    color:var(--black);
+}
+  
+.post .box-container .box .content:hover h3{
+    color:var(--blue);
+}
+  
+.post .box-container .box .content p{
+    font-size: 12px;
+    color:var(--black);
+}

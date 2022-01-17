@@ -7,6 +7,7 @@ import Facilities from './pages/Home/Facilities/Facilities';
 import Review from './pages/Home/Review/Review';
 import Counter from './pages/Home/Counter/Counter';
 import Appointment from './pages/Home/Appointment/Appointment';
+import Posts from './pages/Home/Posts/Posts';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Review />
       <Counter />
       <Appointment />
+      <Posts />
     </>
   );
 }
