@@ -4,9 +4,7 @@ import 'aos/dist/aos.css';
 import './Facility.css';
 
 const Facility = (props) => {
-
     const {title, description, img} = props.facility;
-    // console.log('Facility: ', facility);
 
     useEffect(()=>{
         Aos.init({

@@ -1,0 +1,28 @@
+[
+    {
+        "id":1,
+        "name": "Mashrafe Mortaza",
+        "review": "Following Marianne and Connell, from different backgrounds but the same small town in Ireland, as they weave in and out of each other's.",
+        "img": "https://i.ibb.co/jvFKPjS/pic1.jpg",
+        "date": "jan 5, 2021",
+        "aos": "fade-right"
+    },
+
+    {
+        "id":2,
+        "name": "Mushfiqur Rahim",
+        "review": "Following Marianne and Connell, from different backgrounds but the same small town in Ireland, as they weave in and out of each other's.",
+        "img": "https://i.ibb.co/QD6tSFp/pic2.jpg",
+        "date": "jan 7, 2021",
+        "aos": "fade-up"
+    },
+
+    {
+        "id":3,
+        "name": "Mahmudullah Riyad",
+        "review": "Following Marianne and Connell, from different backgrounds but the same small town in Ireland, as they weave in and out of each other's.",
+        "img": "https://i.ibb.co/8P6bJqZ/pic3.jpg",
+        "date": "jan 10, 2021",
+        "aos": "fade-left"
+    }
+]

@@ -13,7 +13,7 @@ const Posts = () => {
     return (
         <section className="post" id="post">
             <div className="container min-vh-100">
-                <h1 className="heading"><span>'</span> out posts <span>'</span></h1>
+                <h1 className="heading"><span>'</span> our posts <span>'</span></h1>
 
                 <div className="box-container">
 
