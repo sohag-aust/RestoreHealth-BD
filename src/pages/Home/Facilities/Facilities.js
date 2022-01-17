@@ -14,7 +14,7 @@ const Facilities = () => {
         <section className="facility" id="facility">
             <div className="container">
 
-            <h1 className="heading"><span>'</span> our facilities <span>'</span></h1>
+                <h1 className="heading"><span>'</span> our facilities <span>'</span></h1>
 
                 <div className="box-container">
                     <div className="box" data-aos="zoom-in">

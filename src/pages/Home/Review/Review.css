@@ -1,0 +1,64 @@
+.review{
+    background:url('../../../../public/images/img1.jpg'), linear-gradient(var(--black),var(--black)) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+  
+.review .heading{
+    color:#fff;
+}
+  
+.review .box-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+}
+  
+.review .box-container .box{
+    background:#fff;
+    width:280px;
+    margin:0px 15px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    padding:20px;
+    position: relative;
+}
+  
+.review .box-container .box img{
+    position: absolute;
+    bottom: -85px; left: -5px;
+    height:60px;
+    width:60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+  
+.review .box-container .box p{
+    font-size: 12px;
+    color:var(--black);
+}
+  
+.review .box-container .box h3{
+    font-size: 18px;
+    text-align: end;
+    color:var(--blue);
+}
+  
+.review .box-container .box span{
+    text-align: end;
+    color:var(--black);
+    display: block;
+    font-size: 15px;
+}
+  
+.review .box-container .box::before{
+    content: '';
+    position: absolute;
+    bottom: -16px; left:6px;
+    height:32px;
+    width:32px;
+    background:#fff;
+    transform: rotate(45deg);
+}
