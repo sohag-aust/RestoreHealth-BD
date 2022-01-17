@@ -3,6 +3,7 @@ import 'bootstrap/dist/js/bootstrap.bundle'
 import Banner from './pages/Home/Banner/Banner';
 import Header from './pages/Shared/Header/Header';
 import About from './pages/Home/About/About';
+import Facilities from './pages/Home/Facilities/Facilities';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Banner />
       <About />
+      <Facilities />
     </>
   );
 }
