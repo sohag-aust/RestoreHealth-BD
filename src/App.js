@@ -9,6 +9,8 @@ import Appointment from './pages/Home/Appointment/Appointment';
 import Posts from './pages/Home/Posts/Posts';
 import Footer from './pages/Shared/Footer/Footer';
 import Reviews from './pages/Home/Reviews/Reviews';
+import Login from './pages/Login/Login';
+import Registration from './pages/Registration/Registration';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
       <Counter />
       <Appointment />
       <Posts />
+      <Login />
+      <Registration />
       <Footer />
     </>
   );
