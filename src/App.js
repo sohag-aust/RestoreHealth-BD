@@ -7,37 +7,46 @@ import Registration from './pages/Registration/Registration';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
+import PrivateRoute from './pages/Home/PrivateRoute/PrivateRoute';
+import Posts from './pages/Home/Posts/Posts';
+import AuthProvider from './context/AuthProvider';
 
 function App() {
   return (
     <>
-      <Router>
-        <Header />
-        
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
+      <AuthProvider>
+        <Router>
+          <Header />
+          
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
 
-          <Route exact path="/home">
-            <Home />
-          </Route>
+            <Route exact path="/home">
+              <Home />
+            </Route>
 
-          <Route exact path="/register">
-            <Registration />
-          </Route>
+            <PrivateRoute exact path="/post">
+              <Posts />
+            </PrivateRoute>
 
-          <Route exact path="/login">
-            <Login />
-          </Route>
+            <Route exact path="/register">
+              <Registration />
+            </Route>
 
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Switch>
+            <Route exact path="/login">
+              <Login />
+            </Route>
 
-        <Footer />
-      </Router>
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
+
+          <Footer />
+        </Router>
+      </AuthProvider>
     </>
   );
 }

@@ -11,6 +11,7 @@ import initializeAuthentication from "../pages/Login/Firebase/firebase.init";
 initializeAuthentication();
 
 const useFirebase = () => {
+    const [user, setUser] = useState({}); 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -20,16 +21,7 @@ const useFirebase = () => {
 
     const signInUsingGoogle = () => {
         const googleProvider = new GoogleAuthProvider();
-
-        signInWithPopup(auth, googleProvider)
-            .then((result) => {
-                const user = result.user;
-                console.log("== user: ", user);
-            }).catch((error) => {
-                const errorMessage = error.message;
-                console.log("== error in google Login: ", errorMessage);
-            });
-
+        return signInWithPopup(auth, googleProvider);
     }
 
     const verifyEmail = () => {
@@ -72,7 +64,21 @@ const useFirebase = () => {
       return signInWithEmailAndPassword(auth, email, password);
     }
 
+        // observe whether user state is changed or not
+    useEffect(() => {
+      onAuthStateChanged(auth, (user) => {
+          if (user) {
+            console.log("## onAuthStateChanged USER: ", user);
+            setUser(user);
+          } else {
+            // User is signed out
+            // ...
+          }
+        });
+    }, []);
+
     return {
+        user,
         signInUsingGoogle,
         register,
         loginUser,

@@ -4,7 +4,6 @@ import Appointment from '../Appointment/Appointment';
 import Banner from '../Banner/Banner';
 import Counter from '../Counter/Counter';
 import Facilities from '../Facilities/Facilities';
-import Posts from '../Posts/Posts';
 import Reviews from '../Reviews/Reviews';
 
 const Home = () => {
@@ -16,7 +15,7 @@ const Home = () => {
             <Reviews />
             <Counter />
             <Appointment />
-            <Posts />
+            {/* <Posts /> */}
         </>
     );
 };

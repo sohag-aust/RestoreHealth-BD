@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
 import './Registration.css';
 import { useState } from 'react';
+import useAuth from '../../hooks/useAuth';
 
 const Registration = () => {
 
@@ -12,7 +12,7 @@ const Registration = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const {register, verifyEmail, setUserName} = useFirebase();
+    const {register, verifyEmail, setUserName} = useAuth();
 
     const location = useLocation();
     console.log('== came from: ', location.state?.from);
@@ -25,7 +25,7 @@ const Registration = () => {
 
         const fullName = firstName + ' ' + lastName;
         console.log("== full Name: ", fullName);
-        
+
         register(fullName, email, password)
             .then((userCredential) => {
                 // Signed in 

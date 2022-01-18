@@ -2,13 +2,13 @@ import { Button } from 'react-bootstrap';
 import React, { useState } from 'react';
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import './Login.css';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const {signInUsingGoogle, loginUser, signIn} = useFirebase();
+    const {user, signInUsingGoogle, loginUser, signIn} = useAuth();
 
     const location = useLocation();
     console.log('== came from: ', location.state?.from);
@@ -37,6 +37,18 @@ const Login = () => {
         setPassword(event.target.value);
     }
 
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then((result) => {
+                const user = result.user;
+                console.log("== user: ", user);
+                history.push(redirect_uri);
+            }).catch((error) => {
+                const errorMessage = error.message;
+                console.log("== error in google Login: ", errorMessage);
+            });
+    }
+
     return (
         <div id="login">
             <h3 className="text-center text-white">Login form</h3>
@@ -56,7 +68,7 @@ const Login = () => {
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="remember-me" className="text-primary">
-                                        <Button onClick={signInUsingGoogle} variant="outline-primary">Google Login</Button>
+                                        <Button onClick={handleGoogleLogin} variant="outline-primary">Google Login</Button>
                                     </label>
                                     <br />
                                     <div className="wrapper">
