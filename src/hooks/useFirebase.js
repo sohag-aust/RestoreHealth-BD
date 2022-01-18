@@ -64,7 +64,16 @@ const useFirebase = () => {
       return signInWithEmailAndPassword(auth, email, password);
     }
 
-        // observe whether user state is changed or not
+    const googleLogOut = () => {
+      signOut(auth).then(() => {
+          // Sign-out successful.
+          setUser({});
+        }).catch((error) => {
+          // An error happened.
+        });
+  }
+
+    // observe whether user state is changed or not
     useEffect(() => {
       onAuthStateChanged(auth, (user) => {
           if (user) {
@@ -84,7 +93,8 @@ const useFirebase = () => {
         loginUser,
         signIn,
         verifyEmail,
-        setUserName
+        setUserName,
+        googleLogOut
     }
 }
 
