@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import './Facility.css';
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const Facility = (props) => {
-    const {title, description, img} = props.facility;
+    const {id, title, description, img} = props.facility;
 
     useEffect(()=>{
         Aos.init({
@@ -30,7 +32,9 @@ const Facility = (props) => {
                     </p>
                 </div>
                 <div className="card-footer">
-                    <a href="#" className="btn btn-warning">{title}</a>
+                    <Link to={`/facility/${id}`}>
+                        <Button className="btn btn-warning">{title}</Button>
+                    </Link>
                 </div>
             </div>
         </>

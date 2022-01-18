@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound/NotFound';
 import PrivateRoute from './pages/Home/PrivateRoute/PrivateRoute';
 import Posts from './pages/Home/Posts/Posts';
 import AuthProvider from './context/AuthProvider';
+import FacilityDetails from './pages/Home/FacilityDetails/FacilityDetails';
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
             <Route exact path="/home">
               <Home />
             </Route>
+
+            <PrivateRoute exact path="/facility/:facilityId">
+              <FacilityDetails />
+            </PrivateRoute>
 
             <PrivateRoute exact path="/post">
               <Posts />
