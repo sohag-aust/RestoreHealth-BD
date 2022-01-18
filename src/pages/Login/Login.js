@@ -1,8 +1,12 @@
+import { Button } from 'react-bootstrap';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Login.css';
+import useFirebase from '../../hooks/useFirebase';
 
 const Login = () => {
+    const {signInUsingGoogle} = useFirebase();
+
     return (
         <div id="login">
             <h3 className="text-center text-white">Login form</h3>
@@ -21,7 +25,10 @@ const Login = () => {
                                     <input type="text" name="password" id="password" className="form-control" />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="remember-me" className="text-primary"><a href="#">Google Login</a></label><br />
+                                    <label htmlFor="remember-me" className="text-primary">
+                                        <Button onClick={signInUsingGoogle} variant="outline-primary">Google Login</Button>
+                                    </label>
+                                    <br />
                                     <div className="wrapper">
                                         <input type="submit" name="submit" className="btn btn-success btn-md" value="submit" />
                                     </div>
