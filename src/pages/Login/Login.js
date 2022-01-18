@@ -8,7 +8,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const {user, signInUsingGoogle, loginUser, signIn} = useAuth();
+    const {user, signInUsingGoogle, loginUser, signIn, setIsLoading} = useAuth();
 
     const location = useLocation();
     console.log('== came from: ', location.state?.from);
@@ -21,12 +21,15 @@ const Login = () => {
 
         // loginUser(email, password);
 
-        signIn(email, password).then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-            console.log('LoggedIn user: ', user);
-            history.push(redirect_uri);
-        });
+        setIsLoading(true);
+
+        signIn(email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log('LoggedIn user: ', user);
+                history.push(redirect_uri);
+            }).finally(() => setIsLoading(false));
     }
 
     const handleEmail = (event) => {
@@ -38,6 +41,8 @@ const Login = () => {
     }
 
     const handleGoogleLogin = () => {
+        setIsLoading(true);
+
         signInUsingGoogle()
             .then((result) => {
                 const user = result.user;
@@ -46,7 +51,7 @@ const Login = () => {
             }).catch((error) => {
                 const errorMessage = error.message;
                 console.log("== error in google Login: ", errorMessage);
-            });
+            }).finally(() => setIsLoading(false));
     }
 
     return (

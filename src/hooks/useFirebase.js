@@ -16,6 +16,7 @@ const useFirebase = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [name, setName] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
 
     const auth = getAuth();
 
@@ -65,25 +66,34 @@ const useFirebase = () => {
     }
 
     const googleLogOut = () => {
+      setIsLoading(true);
+      
       signOut(auth).then(() => {
           // Sign-out successful.
           setUser({});
         }).catch((error) => {
           // An error happened.
-        });
+        }).finally(()=>setIsLoading(false));;
   }
 
     // observe whether user state is changed or not
+    // onk time e dekha jai , amra multiple tab e facebook khule boshe asi, 
+    // so akta tab theke logout kore felle baki sob tab thekei logout hoye jabe
+    // ei mechanism ta observe korar jonno onAuthStateChange ta useEffect er moddhe diye disi
     useEffect(() => {
-      onAuthStateChanged(auth, (user) => {
+      const unSubscribed = onAuthStateChanged(auth, (user) => {
           if (user) {
             console.log("## onAuthStateChanged USER: ", user);
             setUser(user);
           } else {
             // User is signed out
-            // ...
+            setUser({});
           }
+
+          setIsLoading(false);
         });
+
+        return () => unSubscribed;
     }, []);
 
     return {
@@ -94,7 +104,9 @@ const useFirebase = () => {
         signIn,
         verifyEmail,
         setUserName,
-        googleLogOut
+        googleLogOut,
+        isLoading,
+        setIsLoading
     }
 }
 

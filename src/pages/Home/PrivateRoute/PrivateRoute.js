@@ -1,13 +1,17 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import { useEffect } from 'react';
+import { Spinner } from 'react-bootstrap';
 
 const PrivateRoute = (props) => {
     const {children, ...rest} = props;
-    const {user} = useAuth();
+    const {user, isLoading} = useAuth();
 
-    console.log("++&& user from firebase: ", user);
-
+    if(isLoading) {
+        return <Spinner animation="border" variant="danger" />
+    }
+   
     return (
         <Route
             {...rest}
