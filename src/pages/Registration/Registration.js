@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import useFirebase from '../../hooks/useFirebase';
 import './Registration.css';
 import { useState } from 'react';
@@ -12,14 +12,34 @@ const Registration = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const {register} = useFirebase();
+    const {register, verifyEmail, setUserName} = useFirebase();
+
+    const location = useLocation();
+    console.log('== came from: ', location.state?.from);
+
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/login';
 
     const handleRegistration = (event) => {
         event.preventDefault();
 
         const fullName = firstName + ' ' + lastName;
         console.log("== full Name: ", fullName);
-        register(fullName, email, password);
+        
+        register(fullName, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log("== Registered user: ", user);
+            
+                verifyEmail();
+                setUserName(fullName);
+
+                history.push(redirect_uri);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     const handleFirstName = (event) => {

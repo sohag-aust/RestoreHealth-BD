@@ -1,6 +1,6 @@
 import { Button } from 'react-bootstrap';
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import './Login.css';
 import useFirebase from '../../hooks/useFirebase';
 
@@ -8,12 +8,25 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const {signInUsingGoogle, loginUser} = useFirebase();
+    const {signInUsingGoogle, loginUser, signIn} = useFirebase();
+
+    const location = useLocation();
+    console.log('== came from: ', location.state?.from);
+
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/';
 
     const handleLogin = (event) => {
         event.preventDefault();
 
-        loginUser(email, password);
+        // loginUser(email, password);
+
+        signIn(email, password).then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            console.log('LoggedIn user: ', user);
+            history.push(redirect_uri);
+        });
     }
 
     const handleEmail = (event) => {

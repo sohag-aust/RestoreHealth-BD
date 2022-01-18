@@ -16,7 +16,6 @@ const useFirebase = () => {
     const [error, setError] = useState('');
     const [name, setName] = useState('');
 
-
     const auth = getAuth();
 
     const signInUsingGoogle = () => {
@@ -52,20 +51,7 @@ const useFirebase = () => {
     }
 
     const register = (name, email, password) => {
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-              // Signed in 
-              const user = userCredential.user;
-              console.log("Registered user: ", user);
-              setError('');
-    
-              verifyEmail();
-              setUserName(name);
-            })
-            .catch((error) => {
-              console.log(error);
-              setError(error.message);
-            });
+        return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const loginUser = (email, password) => {
@@ -82,10 +68,17 @@ const useFirebase = () => {
           });
     }
 
+    const signIn = (email, password) => {
+      return signInWithEmailAndPassword(auth, email, password);
+    }
+
     return {
         signInUsingGoogle,
         register,
-        loginUser
+        loginUser,
+        signIn,
+        verifyEmail,
+        setUserName
     }
 }
 
