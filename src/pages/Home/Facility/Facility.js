@@ -32,7 +32,10 @@ const Facility = (props) => {
                     </p>
                 </div>
                 <div className="card-footer">
-                    <Link to={`/facility/${id}`}>
+                    <Link to={{
+                        pathname: `/facility/${id}`,
+                        state: props.facility
+                    }}> 
                         <Button className="btn btn-warning">{title}</Button>
                     </Link>
                 </div>
