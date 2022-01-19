@@ -17,9 +17,11 @@
 
 # Problem Faced:
 * 1) Getting TypeError on `npm run build` : MiniCssExtractPlugin
+
 	** solution: `npm i -D --save-exact mini-css-extract-plugin@2.4.5`
 
 * 2) Firebase app breaks on page reload
+
 	** solution: inside firebase.json `
 		"public": "build",
 		"rewrites": [{
