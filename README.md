@@ -1,4 +1,4 @@
-### [Live site](https://restorehealth-bd.web.app/)
+## [Live Site](https://restorehealth-bd.web.app/)
 
 # Features:
 * Home Page | Contains features
@@ -13,3 +13,17 @@
 * Google Login System
 * Registration System
 * Page Not Found (404)
+
+
+# Problem Faced:
+* 1) Getting TypeError on `npm run build` : MiniCssExtractPlugin
+	** solution: `npm i -D --save-exact mini-css-extract-plugin@2.4.5`
+
+* 2) Firebase app breaks on page reload
+	** solution: inside firebase.json `
+		"public": "build",
+		"rewrites": [{
+			"source": "**",
+			"destination": "/index.html"
+		}]
+	`
