@@ -18,7 +18,7 @@ const FacilityDetails = () => {
         <>
             <div className="card text-center mx-auto my-5 display-center" style={cardStyle} data-aos="zoom-in">
                 <img className="card-img" src={img} alt="Card image cap" />
-                <div className="card-body">
+                <div className="card-body mb-5" >
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text">
                         <span>{description.substring(0,title.length)}</span>
